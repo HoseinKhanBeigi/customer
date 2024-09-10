@@ -101,14 +101,11 @@ const Kyc = () => {
       }
       const json = await response.json();
 
-      const kycWindow = window.open(
-        "https://kyc-gateway.levants.io/",
-        "_blank"
-      );
+      const kycWindow = window.open("https://sdk-kyc.vercel.app/", "_blank");
       setTimeout(() => {
         kycWindow.postMessage(
           { token, kycId: json.kycId },
-          "https://kyc-gateway.levants.io/"
+          "https://sdk-kyc.vercel.app/"
         );
       }, 2000);
       console.log("sending message....");
