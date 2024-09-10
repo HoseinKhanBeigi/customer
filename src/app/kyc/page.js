@@ -2,7 +2,7 @@
 // src/VideoRecorder.js
 import React, { useState, useRef, useMemo, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import CacheInput from "../cacheInput";
+import CacheInput from "./cacheInput";
 import TextField from "@mui/material/TextField";
 
 import "./index.css";
@@ -101,11 +101,14 @@ const Kyc = () => {
       }
       const json = await response.json();
 
-      const kycWindow = window.open("https://sdk-kyc.vercel.app/", "_blank");
+      const kycWindow = window.open(
+        "https://gateway-sdk.vercel.app/",
+        "_blank"
+      );
       setTimeout(() => {
         kycWindow.postMessage(
           { token, kycId: json.kycId },
-          "https://sdk-kyc.vercel.app/"
+          "https://gateway-sdk.vercel.app/"
         );
       }, 2000);
       console.log("sending message....");
