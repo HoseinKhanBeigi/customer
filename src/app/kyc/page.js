@@ -1,7 +1,7 @@
 "use client";
 // src/VideoRecorder.js
 import React, { useState, useRef, useMemo, useEffect } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import CacheInput from "./cacheInput";
 import TextField from "@mui/material/TextField";
 
@@ -15,12 +15,12 @@ import getEpoch from "./epoch";
 //   scope: "roles",
 // });
 
-JSON.stringify({
-  client_id: "api-client-demo",
-  client_secret: "21ba7936-ea0c-45ce-996d-887712f79799",
-  grant_type: "client_credentials",
-  scope: "roles",
-});
+// JSON.stringify({
+//   client_id: "api-client-demo",
+//   client_secret: "21ba7936-ea0c-45ce-996d-887712f79799",
+//   grant_type: "client_credentials",
+//   scope: "roles",
+// });
 
 const Kyc = () => {
   const baseUrl = "https://api.levants.io";
