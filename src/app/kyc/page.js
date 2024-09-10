@@ -185,7 +185,9 @@ const Kyc = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{ display: "flex", justifyContent: "center", background: "white" }}
+    >
       <div className="main">
         <div
           style={{
