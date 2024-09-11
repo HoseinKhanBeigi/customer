@@ -101,10 +101,7 @@ const Kyc = () => {
       }
       const json = await response.json();
 
-      const kycWindow = window.location.assign(
-        "https://gateway-sdk.vercel.app",
-        "_blank"
-      );
+      const kycWindow = window.open("https://gateway-sdk.vercel.app", "_blank");
       setTimeout(() => {
         kycWindow.postMessage(
           { token, kycId: json.kycId },
