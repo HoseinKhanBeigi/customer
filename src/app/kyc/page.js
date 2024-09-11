@@ -107,7 +107,7 @@ const Kyc = () => {
           { token, kycId: json.kycId },
           "https://gateway-sdk.vercel.app"
         );
-      }, 2000);
+      }, 1000);
       console.log("sending message....");
 
       // Wait for the new window to load, then send the data via postMessage
