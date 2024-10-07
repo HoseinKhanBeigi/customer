@@ -157,13 +157,13 @@ const Kyc = () => {
       //   }, 1000);
       // });
 
-      if (
-        !kycWindow ||
-        kycWindow.closed ||
-        typeof kycWindow.closed == "undefined"
-      ) {
-        alert("Popup blocked! Please allow popups for this site.");
-      }
+      // if (
+      //   !kycWindow ||
+      //   kycWindow.closed ||
+      //   typeof kycWindow.closed == "undefined"
+      // ) {
+      //   alert("Popup blocked! Please allow popups for this site.");
+      // }
     } catch (error) {
       console.log(error);
       setLoading(false);
