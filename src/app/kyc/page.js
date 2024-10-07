@@ -55,9 +55,10 @@ const Kyc = () => {
         body: JSON.stringify({ kycId, token }), // Send the message from App1
       });
 
-      // const result = await res.json();
+      return res;
       // setResponse(result); // Store the response from App2
     } catch (error) {
+      alert(error);
       console.error("Error sending message to App2:", error);
     }
   };
@@ -86,6 +87,7 @@ const Kyc = () => {
       console.log(json);
       setToken(json.access_token);
     } catch (error) {
+      alert(error);
       console.error("Error downloading the file:", error);
     }
   };
@@ -138,20 +140,22 @@ const Kyc = () => {
       localStorage.setItem("kycId", json.kycId);
       // http://localhost:3000/
       // https://kycgateway.mt.levants.io/
-      sendMessageToApp2(json.kycId, token);
-      const kycWindow = window.open(
-        "https://gateway-sdk.vercel.app/",
-        "_blank"
-      );
-      await new Promise((resolve) => {
-        setTimeout(() => {
-          kycWindow.postMessage(
-            { token, kycId: json.kycId },
-            "https://gateway-sdk.vercel.app/"
-          );
-          resolve();
-        }, 1000);
+      sendMessageToApp2(json.kycId, token).then(() => {
+        window.location.href = "https://gateway-sdk.vercel.app/";
       });
+      // const kycWindow = window.open(
+      //   "https://gateway-sdk.vercel.app/",
+      //   "_blank"
+      // );
+      // await new Promise((resolve) => {
+      //   setTimeout(() => {
+      //     kycWindow.postMessage(
+      //       { token, kycId: json.kycId },
+      //       "https://gateway-sdk.vercel.app/"
+      //     );
+      //     resolve();
+      //   }, 1000);
+      // });
 
       if (
         !kycWindow ||
