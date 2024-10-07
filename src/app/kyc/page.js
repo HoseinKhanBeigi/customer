@@ -2,7 +2,7 @@
 // src/VideoRecorder.js
 import React, { useState, useRef, useMemo, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import CacheInput from "../cacheInput";
+import CacheInput from "./cacheInput";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
