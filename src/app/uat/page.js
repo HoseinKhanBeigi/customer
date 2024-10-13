@@ -65,7 +65,7 @@ const Kyc = () => {
 
   const getToken = async (e) => {
     try {
-      const response = await fetch(`${baseUrl2}/v1/auth/token`, {
+      const response = await fetch(`${baseUrl}/v1/auth/token`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -117,7 +117,7 @@ const Kyc = () => {
     );
     try {
       const response = await fetch(
-        `${baseUrl2}/v2/kyc/init/${objectDetection}/${filterInputs.nationalCode}/${birthDate}`,
+        `${baseUrl}/v2/kyc/init/${objectDetection}/${filterInputs.nationalCode}/${birthDate}`,
         {
           method: "POST",
           headers: {
