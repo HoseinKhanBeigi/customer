@@ -71,8 +71,8 @@ const Kyc = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          client_id: "api-client-levant",
-          client_secret: "59c24382-18ac-41e5-9141-ef2dbcd2e8de",
+          client_id: "api-client-demo",
+          client_secret: "21ba7936-ea0c-45ce-996d-887712f79799",
           grant_type: "client_credentials",
           scope: "roles",
         }),
